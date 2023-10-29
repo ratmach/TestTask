@@ -1,15 +1,16 @@
 version: '3'
 services:
-  app:
+  backend:
     build:
-      context: ./backend
+      context: ../
     ports:
       - "8000:8000"
     networks:
       - mynetwork
 
-  nginx:
-    image: nginx
+  frontend:
+    build:
+      context: ../FE/
     ports:
       - "80:80"
     volumes:
