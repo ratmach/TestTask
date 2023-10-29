@@ -9,7 +9,11 @@ RUN npm install && mkdir /react-ui && mv ./node_modules ./react-ui
 
 WORKDIR /react-ui
 
-COPY ./calculator/ .
+RUN mkdir ./public
+RUN mkdir ./src
+COPY ./calculator/public ./public
+COPY ./calculator/src ./src
+COPY ./calculator/tsconfig.json ./tsconfig.json
 
 RUN npm run build
 
