@@ -17,6 +17,8 @@ class OperationRequest(BaseModel):
     def check_fields(self, data):
         operator = self.get("operator")
         operator_class = operators(operator)
+        if not operator_class:
+            raise ValueError(f"Operator not found, supported operators: {''.join([i.value for i in registered_operators_as_enum()])}")
         errors = []
         for field, field_types in operator_class.required_fields().items():
             if field not in self:
