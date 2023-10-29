@@ -35,8 +35,8 @@ class OperationMultiply(Operation):
         return self.data.operand_a * self.data.operand_b
 
 
-@operators("calculate", True)
-class OperationMultiply(Operation):
+# @operators("calculate", True)
+class OperationCalculate(Operation):
     """
         this is the example of how one would go about implementing the "a + b - c/d + x * d"
     """
