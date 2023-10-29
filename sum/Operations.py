@@ -35,7 +35,7 @@ class OperationMultiply(Operation):
         return self.data.operand_a * self.data.operand_b
 
 
-# @operators("calculate", True)
+# @operators("calculate", True) THIS IS COMMENTED OUT SO IT DOES NOT APPEAR IN VALID OPERATORS ON FRONTEND
 class OperationCalculate(Operation):
     """
         this is the example of how one would go about implementing the "a + b - c/d + x * d"
