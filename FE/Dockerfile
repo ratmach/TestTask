@@ -1,12 +1,7 @@
-# stage1 as builder
 FROM node:21-alpine3.17 as builder
 
-# copy the package.json to install dependencies
-COPY calculator/package.json calculator/package-lock.json ./
 
-# Install the dependencies and make the folder
-RUN npm install && mkdir /react-ui && mv ./node_modules ./react-ui
-
+RUN mkdir /react-ui
 WORKDIR /react-ui
 
 RUN mkdir ./public
@@ -14,7 +9,9 @@ RUN mkdir ./src
 COPY ./calculator/public ./public
 COPY ./calculator/src ./src
 COPY ./calculator/tsconfig.json ./tsconfig.json
-
+COPY ./calculator/package.json ./package.json
+COPY ./calculator/package-lock.json ./package-lock.json
+RUN npm install
 RUN npm run build
 
 
