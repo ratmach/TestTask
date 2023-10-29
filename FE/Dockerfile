@@ -1,5 +1,5 @@
 # stage1 as builder
-FROM node:10-alpine as builder
+FROM node:21-alpine3.17 as builder
 
 # copy the package.json to install dependencies
 COPY calculator/package.json calculator/package-lock.json ./
