@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {getSupportedOperators, postCalculate} from "./service/api";
 import {postCalculateRequest} from "./service/requests";
+import './App.scss';
 
 function App() {
     const [operators, setSupportedOperators] = useState<string[]>([])
