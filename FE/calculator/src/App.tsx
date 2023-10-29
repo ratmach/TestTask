@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import './App.scss';
 import {getSupportedOperators, postCalculate} from "./service/api";
 import {postCalculateRequest} from "./service/requests";
 
